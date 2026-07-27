@@ -54,6 +54,13 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${fraunces.variable} ${piazzolla.variable} ${bigShoulders.variable} ${workSans.variable} ${plexMono.variable} h-full antialiased`}
+      // O script abaixo muda a className do <html> (adiciona "dark") antes
+      // do React hidratar, pra evitar flash de tema errado. Isso SEMPRE gera
+      // mismatch de hidratação nesse elemento especificamente — é o
+      // trade-off aceito (mesmo padrão do next-themes). suppressHydrationWarning
+      // só silencia o aviso NESSE elemento, não desliga validação de
+      // hidratação no resto da árvore.
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         {/* Aplica o tema salvo ANTES do primeiro paint — evita flash de
