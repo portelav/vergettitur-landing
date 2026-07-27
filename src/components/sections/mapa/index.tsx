@@ -1,0 +1,44 @@
+import { MousePointerClick } from "lucide-react";
+import { MapaProvider } from "./mapa-context";
+import { AlagoasMap } from "./alagoas-map";
+import { RoutesList } from "./routes-list";
+
+export function Mapa() {
+  return (
+    <section id="roteiros" className="relative scroll-mt-20 px-4 py-24 sm:px-6 sm:py-32">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 max-w-2xl">
+          <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-clay">
+            02 · Roteiros
+          </p>
+          <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            Onde ficam os roteiros
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-foreground/70 sm:text-lg">
+            {/* PLACEHOLDER: lista real de passeios pendente — ver docs/perguntas-adriano.md */}
+            Lista provisória, a confirmar com o Adriano. Clique num roteiro
+            pra ver no mapa — ou clique direto num pino.
+          </p>
+        </div>
+
+        <MapaProvider>
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-7">
+              <div className="overflow-hidden rounded-2xl border border-border bg-card p-3 sm:p-6">
+                <AlagoasMap />
+              </div>
+              <div className="mt-4 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-mute">
+                <MousePointerClick aria-hidden className="size-3" />
+                <span>Clique nos pinos ou na lista pra ver cada roteiro</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5">
+              <RoutesList />
+            </div>
+          </div>
+        </MapaProvider>
+      </div>
+    </section>
+  );
+}
