@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { MarqueeBand } from "@/components/MarqueeBand";
 import { Hero } from "@/components/sections/hero";
 import { Sobre } from "@/components/sections/sobre";
 import { Mapa } from "@/components/sections/mapa";
@@ -12,6 +13,8 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+
+        <MarqueeBand />
 
         <Sobre />
 

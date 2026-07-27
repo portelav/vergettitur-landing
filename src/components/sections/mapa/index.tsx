@@ -23,8 +23,14 @@ export function Mapa() {
 
         <MapaProvider>
           <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
-              <div className="overflow-hidden rounded-2xl border border-border bg-card p-3 sm:p-6">
+            {/* Sticky apenas em lg+: o mapa fica "grudado" (top-24, abaixo da
+                navbar) enquanto a lista rola ao lado. Precisa que o mapa seja
+                mais BAIXO que a lista — senão as duas colunas empatam em
+                altura e o sticky não tem margem pra "prender" nada (vira
+                scroll normal 1:1). Por isso o SVG do mapa é mais compacto
+                em lg (ver alagoas-map.tsx). */}
+            <div className="self-start lg:sticky lg:top-24 lg:z-20 lg:col-span-7">
+              <div className="overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-[0_20px_60px_-36px_oklch(0_0_0/0.25)] sm:p-6">
                 <AlagoasMap />
               </div>
               <div className="mt-4 flex items-center justify-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-mute">
@@ -33,7 +39,7 @@ export function Mapa() {
               </div>
             </div>
 
-            <div className="lg:col-span-5">
+            <div className="relative z-10 lg:col-span-5">
               <RoutesList />
             </div>
           </div>

@@ -28,7 +28,7 @@ export function RoutesList() {
       viewport={{ once: true, amount: 0.1 }}
       variants={reduce ? undefined : listVariants}
       aria-label={`${LOCATIONS.length} roteiros da Vergetti Turismo`}
-      className="flex flex-col gap-3"
+      className="flex flex-col gap-4 lg:pt-[6svh]"
     >
       {LOCATIONS.map((location, i) => {
         const highlighted = isHighlighted(location.id);
@@ -53,7 +53,7 @@ export function RoutesList() {
               }
             }}
             className={cn(
-              "group flex cursor-pointer items-center justify-between gap-4 rounded-xl border bg-card p-4 transition-colors duration-200",
+              "group flex cursor-pointer items-center justify-between gap-4 rounded-xl border bg-card p-5 transition-colors duration-200 sm:p-6",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-lagoon-bright",
               highlighted ? "border-lagoon bg-lagoon/10" : "border-border hover:border-lagoon/40"
             )}

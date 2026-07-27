@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-svh items-end overflow-hidden bg-lagoon-deep px-4 pb-16 pt-32 text-sand sm:px-6 sm:pb-24"
+      className="relative flex items-center overflow-hidden bg-lagoon-deep px-4 pb-20 pt-32 text-sand sm:px-6 sm:pb-24"
     >
       {/* Camadas de fundo — sem fotos ainda (nenhuma disponível), tratamento
           gráfico: gradiente + linhas de rota pontilhadas, não placeholder cinza. */}
@@ -53,7 +53,7 @@ export function Hero() {
 
         <CharReveal
           as="h1"
-          text="Adriano Vergetti"
+          text="VergettiTur"
           trigger="mount"
           delay={0.25}
           className="font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl"
@@ -65,7 +65,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-3 font-heading text-lg uppercase tracking-[0.15em] text-lagoon-bright sm:text-xl"
         >
-          Vergetti Turismo
+          Adriano Vergetti
         </motion.p>
 
         <motion.p

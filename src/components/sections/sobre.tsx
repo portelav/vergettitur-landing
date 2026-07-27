@@ -1,13 +1,14 @@
 "use client";
 
 import { MaskReveal } from "@/components/motion/mask-reveal";
+import { FlipCounter } from "@/components/motion/flip-counter";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/lib/use-reduced-motion-safe";
 
 const STATS = [
-  { value: "6+", label: "Roteiros pelo litoral" },
-  { value: "102", label: "Municípios de Alagoas" },
-  { value: "1", label: "Guia, do início ao fim" },
+  { value: 6, suffix: "+", label: "Roteiros pelo litoral" },
+  { value: 102, suffix: "", label: "Municípios de Alagoas" },
+  { value: 1, suffix: "", label: "Guia, do início ao fim" },
 ];
 
 export function Sobre() {
@@ -60,9 +61,11 @@ export function Sobre() {
                 viewport={{ once: true, margin: "-10%" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
-                <p className="font-display text-3xl font-semibold text-lagoon sm:text-4xl">
-                  {stat.value}
-                </p>
+                <FlipCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  className="font-display text-3xl font-semibold text-lagoon sm:text-4xl"
+                />
                 <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-mute">
                   {stat.label}
                 </p>

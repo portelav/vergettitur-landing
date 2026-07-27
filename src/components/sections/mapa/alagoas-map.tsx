@@ -76,7 +76,7 @@ export function AlagoasMap() {
         viewBox={`0 0 ${AL_SVG_VIEWBOX.width} ${AL_SVG_VIEWBOX.height}`}
         role="img"
         aria-label={`Mapa de Alagoas com ${LOCATIONS.length} roteiros marcados`}
-        className="h-[60svh] min-h-[22rem] w-full cursor-default sm:h-[min(70svh,44rem)]"
+        className="h-[60svh] min-h-[22rem] w-full cursor-default sm:h-[min(70svh,44rem)] lg:h-[22rem]"
         preserveAspectRatio="xMidYMid meet"
       >
         <defs>
