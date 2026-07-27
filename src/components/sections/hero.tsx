@@ -1,9 +1,25 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { CharReveal } from "@/components/motion/char-reveal";
+import { motion, type Variants } from "framer-motion";
 import { useReducedMotion } from "@/lib/use-reduced-motion-safe";
 import { WHATSAPP_HREF } from "@/lib/links";
+import { ALAGOAS_MUNICIPIOS } from "@/data/alagoas-municipios";
+import { AL_SVG_VIEWBOX } from "@/data/alagoas-geo";
+
+const wordmarkContainer: Variants = {
+  hidden: {},
+  visible: { transition: { delayChildren: 0.25, staggerChildren: 0.1 } },
+};
+
+const wordmarkWord: Variants = {
+  hidden: { y: "110%" },
+  visible: { y: "0%", transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+};
+
+const wordmarkReduced: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.2 } },
+};
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -41,6 +57,20 @@ export function Hero() {
             strokeDasharray="2 10"
           />
         </svg>
+
+        {/* Elemento gráfico de assinatura — silhueta de Alagoas (mesmos dados
+            do mapa interativo) sangrando pela borda direita, bem grande e
+            bem sutil. Faz o papel que uma foto faria: dá ao hero uma âncora
+            visual grande que só esse site tem. */}
+        <svg
+          viewBox={`0 0 ${AL_SVG_VIEWBOX.width} ${AL_SVG_VIEWBOX.height}`}
+          className="absolute -right-[14%] top-1/2 h-[135%] w-auto -translate-y-1/2 text-foreground/[0.05] sm:-right-[8%] sm:h-[150%]"
+          aria-hidden
+        >
+          {ALAGOAS_MUNICIPIOS.map((muni) => (
+            <path key={muni.id} d={muni.path} fill="currentColor" />
+          ))}
+        </svg>
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl">
@@ -53,13 +83,33 @@ export function Hero() {
           Guia local · Alagoas, Brasil
         </motion.p>
 
-        <CharReveal
-          as="h1"
-          text="VergettiTur"
-          trigger="mount"
-          delay={0.25}
+        {/* Wordmark tratado como marca, não como frase: "Tur" ganha cor
+            própria pra deixar claro que a fusão é proposital (como
+            "Vergetti Turismo" virando um nome só), não erro de digitação. */}
+        <motion.h1
+          initial="hidden"
+          animate="visible"
+          variants={wordmarkContainer}
           className="font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl"
-        />
+        >
+          <span className="sr-only">VergettiTur</span>
+          <span aria-hidden className="inline-block overflow-hidden align-bottom">
+            <motion.span
+              className="inline-block"
+              variants={reduce ? wordmarkReduced : wordmarkWord}
+            >
+              Vergetti
+            </motion.span>
+          </span>
+          <span aria-hidden className="inline-block overflow-hidden align-bottom text-lagoon">
+            <motion.span
+              className="inline-block"
+              variants={reduce ? wordmarkReduced : wordmarkWord}
+            >
+              Tur
+            </motion.span>
+          </span>
+        </motion.h1>
 
         <motion.p
           initial={reduce ? undefined : { opacity: 0, y: 12 }}

@@ -59,7 +59,10 @@
   --lagoon: oklch(0.5 0.11 195);
   --lagoon-bright: oklch(0.68 0.13 190);
   --lagoon-deep: oklch(0.22 0.055 212);
-  --clay: oklch(0.56 0.15 42);
+  /* Mais escuro que o "clay" narrativo (0.56) — em texto pequeno sobre
+     --sand ele ficava com contraste raspando o mínimo aceitável. Escurecido
+     só o suficiente pra sobrar folga, mantendo a mesma matiz terracota. */
+  --clay: oklch(0.48 0.15 42);
   --gold: oklch(0.79 0.13 86);
   --mute: oklch(0.52 0.03 210);
 
@@ -103,6 +106,9 @@
   --surface-2: oklch(0.3 0.05 208);
   --lagoon-bright: oklch(0.8 0.14 188);
   --gold: oklch(0.83 0.13 88);
+  /* No escuro o clay escurecido do claro perderia contraste contra o navy —
+     volta pro tom mais claro/original aqui. */
+  --clay: oklch(0.6 0.15 42);
   --accent-contrast: var(--lagoon-bright);
   --card: var(--surface);
   --card-foreground: oklch(0.96 0.015 85);

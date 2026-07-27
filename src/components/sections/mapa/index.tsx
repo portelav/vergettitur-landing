@@ -37,6 +37,21 @@ export function Mapa() {
                 <MousePointerClick aria-hidden className="size-3" />
                 <span>Clique nos pinos ou na lista pra ver cada roteiro</span>
               </div>
+
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-xl border border-border bg-card px-5 py-4 font-mono text-[10px] uppercase tracking-[0.25em] text-mute">
+                <span className="flex items-center gap-2">
+                  <span className="size-2.5 rounded-full bg-lagoon" aria-hidden />
+                  Município com roteiro
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="size-2.5 rounded-full bg-clay" aria-hidden />
+                  Ponto do roteiro
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="h-px w-5 border-t border-dashed border-clay" aria-hidden />
+                  Rota sugerida
+                </span>
+              </div>
             </div>
 
             <div className="relative z-10 lg:col-span-5">

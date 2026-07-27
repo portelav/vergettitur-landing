@@ -74,7 +74,7 @@ export function RoutesList() {
                 <p className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.25em] text-clay">
                   {location.municipio} · AL
                 </p>
-                <p className="mt-1.5 hidden text-sm leading-snug text-card-foreground/70 sm:block">
+                <p className="mt-1.5 line-clamp-2 text-sm leading-snug text-card-foreground/70">
                   {location.description}
                 </p>
               </div>

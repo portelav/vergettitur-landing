@@ -46,6 +46,13 @@ Clonado localmente em análise, não é dependência do projeto.
   "sunburst" indo pro claro), troca o tema no pico, recolhe de volta pro
   botão. `src/components/ThemeToggle.tsx`
 - Repo público: https://github.com/portelav/vergettitur-landing
+- Review de design (persona designer sênior) + correções aplicadas: wordmark
+  "VergettiTur" com "Tur" em cor própria (lia como erro de digitação antes),
+  silhueta de Alagoas como elemento gráfico de fundo no Hero (dado do mapa
+  reaproveitado), placeholder de foto do Sobre discretizado (era um bloco
+  colorido chamativo, virou moldura tracejada neutra), contraste do `clay`
+  reforçado no tema claro, legenda adicionada no mapa (preenche vão vazio),
+  descrição do roteiro visível no mobile (antes só desktop)
 
 ### Placeholder — aguardando dados reais do Adriano
 Ver `docs/perguntas-adriano.md` (100 perguntas). Bloqueando:

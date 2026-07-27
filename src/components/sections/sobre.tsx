@@ -3,6 +3,7 @@
 import { MaskReveal } from "@/components/motion/mask-reveal";
 import { FlipCounter } from "@/components/motion/flip-counter";
 import { motion } from "framer-motion";
+import { Camera } from "lucide-react";
 import { useReducedMotion } from "@/lib/use-reduced-motion-safe";
 
 const STATS = [
@@ -18,11 +19,12 @@ export function Sobre() {
     <section id="sobre" className="relative scroll-mt-20 overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.3fr] lg:items-center">
         <MaskReveal direction="right">
-          {/* PLACEHOLDER: sem foto do Adriano ainda — moldura gráfica no lugar
-              de retrato até as fotos chegarem. */}
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-lagoon via-lagoon-bright/60 to-gold/40">
-            <div className="absolute inset-6 rounded-2xl border border-sand/30" />
-            <span className="absolute bottom-6 left-6 font-mono text-xs uppercase tracking-[0.3em] text-sand/90">
+          {/* PLACEHOLDER: sem foto do Adriano ainda. Tratamento discreto de
+              propósito — borda tracejada + tom neutro, pra não competir
+              visualmente com o conteúdo real (bio, stats) até a foto chegar. */}
+          <div className="relative mx-auto flex aspect-[4/5] w-full max-w-xs flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-border bg-surface-2 text-mute">
+            <Camera className="size-7" strokeWidth={1.5} />
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em]">
               Foto em breve
             </span>
           </div>
