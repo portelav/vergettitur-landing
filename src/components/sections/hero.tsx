@@ -11,12 +11,14 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex items-center overflow-hidden bg-lagoon-deep px-4 pb-20 pt-32 text-sand sm:px-6 sm:pb-24"
+      className="relative flex items-center overflow-hidden bg-surface-2 px-4 pb-20 pt-32 text-foreground sm:px-6 sm:pb-24"
     >
       {/* Camadas de fundo — sem fotos ainda (nenhuma disponível), tratamento
-          gráfico: gradiente + linhas de rota pontilhadas, não placeholder cinza. */}
+          gráfico: gradiente + linhas de rota pontilhadas, não placeholder cinza.
+          Usa --surface-2 nas pontas do gradiente (não --lagoon-deep fixo) pra
+          se adaptar ao tema, mantendo contraste com Sobre/Roteiros (bg-background). */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-lagoon-deep via-lagoon-deep to-lagoon" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-2 via-surface-2 to-lagoon" />
         <motion.div
           className="absolute -right-24 top-16 size-[26rem] rounded-full bg-lagoon-bright/20 blur-3xl"
           animate={reduce ? undefined : { y: [0, -16, 0] }}
@@ -46,7 +48,7 @@ export function Hero() {
           initial={reduce ? undefined : { opacity: 0, y: 12 }}
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-4 font-mono text-xs uppercase tracking-[0.35em] text-gold sm:text-sm"
+          className="mb-4 font-mono text-xs uppercase tracking-[0.35em] text-clay sm:text-sm"
         >
           Guia local · Alagoas, Brasil
         </motion.p>
@@ -63,7 +65,7 @@ export function Hero() {
           initial={reduce ? undefined : { opacity: 0, y: 12 }}
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-3 font-heading text-lg uppercase tracking-[0.15em] text-lagoon-bright sm:text-xl"
+          className="mt-3 font-heading text-lg uppercase tracking-[0.15em] text-accent-contrast sm:text-xl"
         >
           Adriano Vergetti
         </motion.p>
@@ -72,7 +74,7 @@ export function Hero() {
           initial={reduce ? undefined : { opacity: 0, y: 12 }}
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="mt-6 max-w-xl text-base leading-relaxed text-sand/85 sm:text-lg"
+          className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-lg"
         >
           Praias, piscinas naturais e rios de Alagoas com quem vive a região.
           Roteiros guiados, no seu ritmo, direto pelo WhatsApp.
@@ -94,7 +96,7 @@ export function Hero() {
           </a>
           <a
             href="#roteiros"
-            className="rounded-full border border-sand/40 px-8 py-3 font-heading text-sm font-bold uppercase tracking-widest transition-colors hover:bg-sand/10"
+            className="rounded-full border border-foreground/25 px-8 py-3 font-heading text-sm font-bold uppercase tracking-widest transition-colors hover:bg-foreground/10"
           >
             Ver roteiros
           </a>

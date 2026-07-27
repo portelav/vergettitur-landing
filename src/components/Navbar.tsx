@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_HREF } from "@/lib/links";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
   { href: "#sobre", label: "Sobre" },
@@ -50,6 +51,8 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle />
+
           <a
             href={WHATSAPP_HREF}
             target="_blank"

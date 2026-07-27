@@ -18,6 +18,7 @@
   --color-mute: var(--mute);
   --color-sand: var(--sand);
   --color-ink: var(--ink);
+  --color-accent-contrast: var(--accent-contrast);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -66,6 +67,10 @@
   --foreground: var(--ink);
   --surface: oklch(0.99 0.008 85);
   --surface-2: oklch(0.92 0.02 82);
+  /* Acento usado como texto direto sobre o background (tagline, links) —
+     precisa de leitura boa tanto em fundo claro quanto escuro, por isso é
+     um token à parte em vez de reusar --lagoon-bright direto. */
+  --accent-contrast: var(--lagoon);
 
   --card: var(--surface);
   --card-foreground: var(--ink);
@@ -86,34 +91,11 @@
   --radius: 0.75rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--lagoon-deep);
-    --foreground: oklch(0.96 0.015 85);
-    --surface: oklch(0.26 0.05 210);
-    --surface-2: oklch(0.3 0.05 208);
-    --lagoon-bright: oklch(0.8 0.14 188);
-    --gold: oklch(0.83 0.13 88);
-    --card: var(--surface);
-    --card-foreground: oklch(0.96 0.015 85);
-    --popover: var(--surface);
-    --popover-foreground: oklch(0.96 0.015 85);
-    --primary: var(--lagoon-bright);
-    --primary-foreground: oklch(0.16 0.03 212);
-    --secondary: var(--clay);
-    --secondary-foreground: oklch(0.98 0.006 85);
-    --muted: var(--surface-2);
-    --muted-foreground: oklch(0.75 0.02 200);
-    --accent: var(--gold);
-    --accent-foreground: oklch(0.16 0.03 212);
-    --border: oklch(0.96 0.015 85 / 0.12);
-    --input: oklch(0.96 0.015 85 / 0.16);
-    --ring: var(--lagoon-bright);
-  }
-}
-
-/* Toggle manual via classe `.dark` no <html> (shadcn/@custom-variant) — não
-   temos seletor de tema na v1, mas fica pronto se adicionarmos um. */
+/* Tema escuro — opt-in via classe `.dark` no <html> (ThemeToggle). Claro é
+   o padrão/principal; SEM media query de `prefers-color-scheme`, de
+   propósito — o SO deste ambiente já reportou preferências pouco
+   confiáveis (ver decisão em use-reduced-motion-safe.ts), então o tema
+   inicial é sempre claro, e o usuário escolhe o escuro explicitamente. */
 .dark {
   --background: var(--lagoon-deep);
   --foreground: oklch(0.96 0.015 85);
@@ -121,6 +103,7 @@
   --surface-2: oklch(0.3 0.05 208);
   --lagoon-bright: oklch(0.8 0.14 188);
   --gold: oklch(0.83 0.13 88);
+  --accent-contrast: var(--lagoon-bright);
   --card: var(--surface);
   --card-foreground: oklch(0.96 0.015 85);
   --popover: var(--surface);

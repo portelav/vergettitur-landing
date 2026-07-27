@@ -143,7 +143,7 @@ export function AlagoasMap() {
                     className="pointer-events-none select-none font-mono"
                     fontSize={9}
                     fontWeight={600}
-                    fill="var(--lagoon-deep)"
+                    fill="var(--foreground)"
                     style={{ letterSpacing: "0.05em" }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: isHovered ? 0.9 : 0.55 }}
@@ -219,7 +219,7 @@ export function AlagoasMap() {
                   <circle r={12} fill="var(--sand)" />
                   <circle
                     r={9.5}
-                    fill={highlighted ? "var(--lagoon-bright)" : "var(--clay)"}
+                    fill={highlighted ? "var(--lagoon)" : "var(--clay)"}
                     stroke="var(--sand)"
                     strokeWidth={1.5}
                   />

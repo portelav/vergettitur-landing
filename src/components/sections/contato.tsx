@@ -20,7 +20,7 @@ export function Contato() {
   return (
     <section
       id="contato"
-      className="relative scroll-mt-20 overflow-hidden bg-lagoon-deep px-4 py-24 text-sand sm:px-6 sm:py-32"
+      className="relative scroll-mt-20 overflow-hidden bg-surface-2 px-4 py-24 text-foreground sm:px-6 sm:py-32"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-10">
         <svg className="h-full w-full" preserveAspectRatio="none">
@@ -35,7 +35,7 @@ export function Contato() {
       </div>
 
       <div className="relative mx-auto max-w-3xl text-center">
-        <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-gold">
+        <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-clay">
           03 · Contato
         </p>
 
@@ -50,7 +50,7 @@ export function Contato() {
           whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-sand/80 sm:text-lg"
+          className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-foreground/75 sm:text-lg"
         >
           Chama no WhatsApp e monta seu roteiro direto com o Adriano.
         </motion.p>
@@ -71,7 +71,7 @@ export function Contato() {
             <MessageCircle className="size-5" />
             Chamar no WhatsApp
           </a>
-          <span className="font-mono text-sm text-sand/60">
+          <span className="font-mono text-sm text-foreground/55">
             {formatBrPhone(WHATSAPP_NUMBER)}
           </span>
         </motion.div>

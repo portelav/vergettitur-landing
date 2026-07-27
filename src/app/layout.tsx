@@ -45,6 +45,13 @@ export default function RootLayout({
       className={`${fraunces.variable} ${bigShoulders.variable} ${workSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Aplica o tema salvo ANTES do primeiro paint — evita flash de
+            tema errado. Claro é o padrão (não lê prefers-color-scheme). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('vergettitur-theme')==='dark'){document.documentElement.classList.add('dark')}}catch(e){}`,
+          }}
+        />
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
