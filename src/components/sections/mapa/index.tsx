@@ -11,7 +11,7 @@ export function Mapa() {
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-clay">
             02 · Roteiros
           </p>
-          <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          <h2 className="font-editorial text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
             Onde ficam os roteiros
           </h2>
           <p className="mt-4 text-base leading-relaxed text-foreground/70 sm:text-lg">

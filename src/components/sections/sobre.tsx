@@ -34,7 +34,7 @@ export function Sobre() {
           <p className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-clay">
             01 · Sobre
           </p>
-          <h2 className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          <h2 className="font-editorial text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
             Quem te leva pra conhecer Alagoas de verdade
           </h2>
 
@@ -66,7 +66,7 @@ export function Sobre() {
                 <FlipCounter
                   value={stat.value}
                   suffix={stat.suffix}
-                  className="font-display text-3xl font-semibold text-lagoon sm:text-4xl"
+                  className="font-editorial text-3xl font-bold text-lagoon sm:text-4xl"
                 />
                 <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-mute">
                   {stat.label}

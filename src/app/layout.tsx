@@ -1,13 +1,24 @@
 import type { Metadata } from "next";
-import { Fraunces, Big_Shoulders, Work_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Fraunces, Piazzolla, Big_Shoulders, Work_Sans, IBM_Plex_Mono } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import "./globals.css";
 
+// Reservada só pro wordmark "VergettiTur" — usada como logotipo, não como
+// fonte de título geral (ver globals.css: .font-editorial é a de título).
 const fraunces = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
   weight: ["600", "900"],
   style: ["normal", "italic"],
+});
+
+// Fonte dos títulos de seção. Trocada de Fraunces pra Piazzolla — Fraunces
+// sozinha ficava "boutique de design/indie 2023" demais pra um guia de
+// turismo regional; Piazzolla tem mais calor/tradição, menos trend.
+const piazzolla = Piazzolla({
+  variable: "--font-editorial",
+  subsets: ["latin"],
+  weight: ["600", "700"],
 });
 
 const bigShoulders = Big_Shoulders({
@@ -42,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${bigShoulders.variable} ${workSans.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${piazzolla.variable} ${bigShoulders.variable} ${workSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         {/* Aplica o tema salvo ANTES do primeiro paint — evita flash de

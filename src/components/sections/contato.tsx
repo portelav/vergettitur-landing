@@ -42,7 +42,7 @@ export function Contato() {
         <CharReveal
           as="h2"
           text="Bora conhecer Alagoas?"
-          className="font-display text-4xl font-semibold leading-tight tracking-tight sm:text-6xl"
+          className="font-editorial text-4xl font-bold leading-tight tracking-tight sm:text-6xl"
         />
 
         <motion.p

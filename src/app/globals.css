@@ -23,6 +23,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-display: var(--font-display);
+  --font-editorial: var(--font-editorial);
   --font-heading: var(--font-heading);
 
   --color-card: var(--card);
@@ -142,8 +143,15 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
+  /* Reservada pro wordmark "VergettiTur" (logotipo) — não usar em títulos
+     de seção, ver .font-editorial abaixo. */
   .font-display {
     font-family: var(--font-display), ui-serif, serif;
+  }
+
+  /* Fonte de título das seções (h2, "Bora conhecer Alagoas?", stats). */
+  .font-editorial {
+    font-family: var(--font-editorial), ui-serif, serif;
   }
 
   .font-heading {

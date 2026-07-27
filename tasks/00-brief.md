@@ -55,6 +55,15 @@ Clonado localmente em análise, não é dependência do projeto.
   colorido chamativo, virou moldura tracejada neutra), contraste do `clay`
   reforçado no tema claro, legenda adicionada no mapa (preenche vão vazio),
   descrição do roteiro visível no mobile (antes só desktop)
+- Bugs de corte achados no review visual e corrigidos: descendente do 'g'
+  em "Vergetti" cortada pela máscara de reveal (leading apertado sem folga
+  pra Fraunces — `pb-[0.15em]` no wrapper), e cards de roteiro vazando 28px
+  da tela em ≤320px (item de grid sem `min-w-0` — clássica armadilha do
+  CSS Grid, `truncate`/nowrap empurrava a coluna antes de truncar)
+- Tipografia: Fraunces agora só no wordmark "VergettiTur" (logotipo).
+  Títulos de seção (Sobre/Roteiros/Contato/stats) migraram pra **Piazzolla**
+  (`--font-editorial` / `.font-editorial`) — Fraunces sozinha em tudo lia
+  "boutique de design indie 2023" demais pra um guia de turismo regional
 
 ### Placeholder — aguardando dados reais do Adriano
 Ver `docs/perguntas-adriano.md` (100 perguntas). Bloqueando:
