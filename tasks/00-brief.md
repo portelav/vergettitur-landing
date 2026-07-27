@@ -64,6 +64,12 @@ Clonado localmente em análise, não é dependência do projeto.
   Títulos de seção (Sobre/Roteiros/Contato/stats) migraram pra **Piazzolla**
   (`--font-editorial` / `.font-editorial`) — Fraunces sozinha em tudo lia
   "boutique de design indie 2023" demais pra um guia de turismo regional
+- Fix: erro de hidratação no `<html>` causado pelo script de tema (muda
+  className antes do React hidratar) — `suppressHydrationWarning`, mesmo
+  padrão do next-themes. Testado com tema escuro pré-setado, zero warning.
+- **Deploy em produção**: https://vergettitur.vercel.app (Vercel, conta
+  `portelav`, projeto `vergettitur`). GitHub conectado — push em `master`
+  vira deploy automático daqui pra frente. Sem domínio próprio ainda.
 
 ### Placeholder — aguardando dados reais do Adriano
 Ver `docs/perguntas-adriano.md` (100 perguntas). Bloqueando:
