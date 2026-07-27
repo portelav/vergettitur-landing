@@ -93,7 +93,11 @@ export function Hero() {
           className="font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl"
         >
           <span className="sr-only">VergettiTur</span>
-          <span aria-hidden className="inline-block overflow-hidden align-bottom">
+          {/* pb-[0.15em] no wrapper: sem essa folga, o overflow-hidden da
+              máscara de reveal corta a descendente do "g" de "Vergetti" —
+              leading apertado (0.95) não sobra espaço embaixo da linha de
+              base pra a Fraunces desenhar o rabinho do g inteiro. */}
+          <span aria-hidden className="inline-block overflow-hidden pb-[0.15em] align-bottom">
             <motion.span
               className="inline-block"
               variants={reduce ? wordmarkReduced : wordmarkWord}
@@ -101,7 +105,7 @@ export function Hero() {
               Vergetti
             </motion.span>
           </span>
-          <span aria-hidden className="inline-block overflow-hidden align-bottom text-lagoon">
+          <span aria-hidden className="inline-block overflow-hidden pb-[0.15em] align-bottom text-lagoon">
             <motion.span
               className="inline-block"
               variants={reduce ? wordmarkReduced : wordmarkWord}

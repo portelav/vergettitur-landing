@@ -29,7 +29,11 @@ export function Mapa() {
                 altura e o sticky não tem margem pra "prender" nada (vira
                 scroll normal 1:1). Por isso o SVG do mapa é mais compacto
                 em lg (ver alagoas-map.tsx). */}
-            <div className="self-start lg:sticky lg:top-24 lg:z-20 lg:col-span-7">
+            {/* min-w-0 nos dois itens: sem isso, item de grid herda
+                min-width:auto (= min-content do conteúdo) — o <h3
+                truncate> vira white-space:nowrap e empurra a coluna
+                inteira mais larga que a viewport antes de truncar. */}
+            <div className="min-w-0 self-start lg:sticky lg:top-24 lg:z-20 lg:col-span-7">
               <div className="overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-[0_20px_60px_-36px_oklch(0_0_0/0.25)] sm:p-6">
                 <AlagoasMap />
               </div>
@@ -54,7 +58,7 @@ export function Mapa() {
               </div>
             </div>
 
-            <div className="relative z-10 lg:col-span-5">
+            <div className="relative z-10 min-w-0 lg:col-span-5">
               <RoutesList />
             </div>
           </div>
