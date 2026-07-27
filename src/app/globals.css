@@ -203,4 +203,26 @@
       transform: translate3d(0, -10px, 0);
     }
   }
+
+  /* Troca de tema — usa a View Transitions API nativa (ThemeToggle.tsx).
+     Sem disco de cor sólida cobrindo a tela: o navegador tira um "print" do
+     antes/depois e a gente só recorta o novo estado com um círculo que
+     cresce a partir do botão clicado — o conteúdo real vai aparecendo por
+     trás, não uma cor lisa. --vt-x/--vt-y são setadas via JS no clique. */
+  ::view-transition-old(root) {
+    animation: none;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-circle-reveal 480ms ease-in-out;
+  }
+
+  @keyframes vt-circle-reveal {
+    from {
+      clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
+    }
+    to {
+      clip-path: circle(140% at var(--vt-x, 50%) var(--vt-y, 50%));
+    }
+  }
 }

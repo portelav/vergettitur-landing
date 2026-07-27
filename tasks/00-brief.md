@@ -41,10 +41,12 @@ Clonado localmente em análise, não é dependência do projeto.
   o padrão. Não depende de `prefers-color-scheme` do SO (mesmo motivo do
   reduced-motion). Estado em localStorage, aplicado antes do paint via
   script inline
-- Transição de tema: disco cresce do botão cobrindo a tela (escuro c/
-  glow frio = "eclipse" indo pro dark; dourado c/ glow quente =
-  "sunburst" indo pro claro), troca o tema no pico, recolhe de volta pro
-  botão. `src/components/ThemeToggle.tsx`
+- Transição de tema: **v2** — trocado o disco colorido+glow (achado
+  chamativo demais) pela View Transitions API nativa. Círculo cresce do
+  botão revelando o conteúdo real por trás (não uma cor sólida cobrindo a
+  tela), ~480ms, sem glow. Fallback: troca instanea em browser sem suporte
+  (feature-detect `document.startViewTransition`). CSS em globals.css
+  (`::view-transition-old/new(root)`), lógica em `ThemeToggle.tsx`.
 - Repo público: https://github.com/portelav/vergettitur-landing
 - Review de design (persona designer sênior) + correções aplicadas: wordmark
   "VergettiTur" com "Tur" em cor própria (lia como erro de digitação antes),
